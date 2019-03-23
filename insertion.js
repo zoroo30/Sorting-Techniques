@@ -1,3 +1,4 @@
+/*
 var scanf = require('scanf');
 console.log("Enter the size of the array:");
 let size = scanf("%d");
@@ -5,6 +6,13 @@ let array=[];
 for(i=0;i<size;i++)
 {
     array[i]=scanf("%d");
+}
+*/
+let size =Math.floor(Math.random()*(20+1)) +1;
+let array=[];
+for(i=0;i<size;i++)
+{
+    array[i]=Math.floor(Math.random()*(1000+1));
 }
 
 for (j=0;j<size;j++)
