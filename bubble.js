@@ -12,11 +12,9 @@ for (n = 0; n < 25; n++) {
     let end = new Date().getTime();
     let time = end - start;
     timeVector.push(time);
-}
-
-for (n = 0; n < 25; n++) {
     console.log(`${timeVector[n]} ${sizeVector[n]}`);
 }
+
 function bubble(array, size) {
     for (j = 0; j < size - 1; j++) {
         for (i = 0; i < size - 1 - j; i++) {

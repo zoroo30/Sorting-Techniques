@@ -12,12 +12,8 @@ for (n = 0; n < 25; n++) {
     let end = new Date().getTime();
     let time = end - start;
     timeVector.push(time);
-}
-
-for (n = 0; n < 25; n++) {
     console.log(`${timeVector[n]} ${sizeVector[n]}`);
 }
-
 
 function selection(array, size) {
 
