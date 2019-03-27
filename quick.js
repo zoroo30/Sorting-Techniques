@@ -1,26 +1,12 @@
+let functions = require ('./functions');
 let timeVector = [];
-let sizeVector = [];
-for (n = 0; n < 25; n++) {
-    let size = Math.floor(Math.random() * (100000 + 1)) + 1;
-    sizeVector.push(size);
-    let array = [];
-    for (i = 0; i < size; i++) {
-        array[i] = Math.floor(Math.random() * (100 + 1));
-    }
-    let start = new Date().getTime();
-    quickSort(array, 0, size - 1);
-    let end = new Date().getTime();
-    let time = end - start;
-    timeVector.push(time);
-    console.log(`${timeVector[n]} ${sizeVector[n]}`);
-}
-
 function quickSort(arr, start, end) {
     if (end <= start)
         return;
     let pivot = quickPass(arr, start, end);
     quickSort(arr, start, pivot - 1);
     quickSort(arr, pivot + 1, end);
+    functions.calculateTime();
 }
 
 function quickPass(arr, start, end) {
@@ -43,3 +29,6 @@ function swap(arr, p1, p2) {
     arr[p1] = arr[p2];
     arr[p2] = temp;
 }
+
+
+module.exports.quick = "quick";

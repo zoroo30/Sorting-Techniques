@@ -1,24 +1,6 @@
+let functions = require ('./functions');
 let timeVector = [];
-let sizeVector = [];
-
-for (n = 0; n < 25; n++) {
-    let size = Math.floor(Math.random() * (10000 + 1)) + 1;
-    sizeVector.push(size);
-    let array = [];
-    for (i = 0; i < size; i++) {
-        array[i] = Math.floor(Math.random() * (100 + 1));
-    }
-    let start = new Date().getTime();
-    let sorted = [];
-    heapSort(array, size, sorted);
-    let end = new Date().getTime();
-    let time = end - start;
-    timeVector.push(time);
-    console.log(`${timeVector[n]} ${sizeVector[n]}`);
-}
-
-
-
+let sorted=[]
 function maxHeapify(node, array, size) {
     if ((node * 2) > size)
         return;
@@ -59,7 +41,7 @@ function buildMaxHeap(array, size) {
     }
 }
 
-function heapSort(array, size, sorted) {
+function heapSort(array, size) {
     let i = 0;
     for (i; i < size; i++) {
         buildMaxHeap(array, size);
@@ -77,3 +59,5 @@ function swap(arr, p1, p2) {
     arr[p2] = temp;
 }
 
+
+module.exports.heap = "heap";

@@ -1,26 +1,5 @@
+let functions = require ('./functions');
 let timeVector = [];
-let sizeVector = [];
-for (n = 0; n < 25; n++) {
-    let size = Math.floor(Math.random() * (100000 + 1)) + 1;
-    sizeVector.push(size);
-    let array = [];
-    for (i = 0; i < size; i++) {
-        array[i] = Math.floor(Math.random() * (100 + 1));
-    }
-    let start = new Date().getTime();
-    divide(array, 0, size - 1);
-    let end = new Date().getTime();
-    let time = end - start;
-    timeVector.push(time);
-    console.log(`${timeVector[n]} ${sizeVector[n]}`);
-}
-
-function swap(arr, p1, p2) {
-    temp = arr[p1];
-    arr[p1] = arr[p2];
-    arr[p2] = temp;
-}
-
 function divide(arr, start, end) {
     if (start >= end) {
         return;
@@ -29,6 +8,7 @@ function divide(arr, start, end) {
     divide(arr, start, m);
     divide(arr, (m + 1), end);
     merge(arr, start, m, end);
+    functions.calculateTime();
 }
 
 function merge(arr, start, m, end) {
@@ -76,3 +56,6 @@ function merge(arr, start, m, end) {
     }
     return;
 }
+
+
+module.exports.merge = "merge";
