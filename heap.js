@@ -26,7 +26,7 @@ function maxHeapify(node, array, size) {
         index = node * 2 + 1;
     }
     if (bigger > array[node]) {
-        function.swap(array, node, index);
+        functions.swap(array, node, index);
     }
     else
         return;
