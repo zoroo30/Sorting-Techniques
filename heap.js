@@ -26,7 +26,7 @@ function maxHeapify(node, array, size) {
         index = node * 2 + 1;
     }
     if (bigger > array[node]) {
-        swap(array, node, index);
+        function.swap(array, node, index);
     }
     else
         return;
@@ -50,14 +50,8 @@ function heapSort(array, size) {
     }
     let stop = Math.floor(size / 2);
     for (i = 0, j = size - 1; i < stop; i++ , j--) {
-        swap(sorted, i, j);
+        functions.swap(sorted, i, j);
     }
+    functions.calculateTime();
 }
-function swap(arr, p1, p2) {
-    temp = arr[p1];
-    arr[p1] = arr[p2];
-    arr[p2] = temp;
-}
-
-
 module.exports.heap = "heap";

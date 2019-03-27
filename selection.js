@@ -4,7 +4,7 @@ function selection(array, size) {
 
     for (j = 0; j < size; j++) {
         let index = findMin(array, j, size);
-        swap(array, index, j);
+        functions.swap(array, index, j);
     }
     functions.calculateTime();
 }
