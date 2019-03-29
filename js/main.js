@@ -1,29 +1,41 @@
 let sortingAlgorithms = {
-    "bubble sort": new BubbleSort(),
-    "insertion sort": new InsertionSort(),
-    "selection sort": new SelectionSort(),
-    "merge sort": new MergeSort(),
-    "quick sort": new QuickSort(),
-    "heap sort": new HeapSort()
+    "Bubble sort": new BubbleSort(),
+    "Insertion sort": new InsertionSort(),
+    "Selection sort": new SelectionSort(),
+    "Merge sort": new MergeSort(),
+    "Quick sort": new QuickSort(),
+    "Heap sort": new HeapSort()
 };
 
-for(let x = 0; x <= 10000; x += 1000) {
-    var arr = getRandomInputArray(x);
-    for (var key in sortingAlgorithms) {
-        sortingAlgorithms[key].sort(arr);
-    }
+let mainPlot = new Plot(sortingAlgorithms);
+mainPlot.runSorting(10000, 2000);
+mainPlot.draw("plot");
+
+let visualizer = new Visualizer();
+
+let controls = new Controls(sortingAlgorithms, visualizer);
+controls.setControls("algorithm_select", "btn_visualize");
+
+
+let sketch = function(p) {
+  p.setup = function() {
+    visualizer.setup(p);
+  };
+
+  p.draw = function() {
+    controls.update();
+    visualizer.draw(p);
+  };
+
+  p.windowResized = function() {
+    visualizer.resize(p);
+  };
+};
+
+let myp5 = new p5(sketch,"canvas");
+
+
+
+window.onresize = function() {
+  mainPlot.resize("plot");
 }
-
-var data = [];
-
-for (var key in sortingAlgorithms) {
-    data.push({
-      x: sortingAlgorithms[key].sizeVector,
-      y: sortingAlgorithms[key].timeVector,
-      mode: 'lines+markers',
-      type: 'scatter',
-      name: key
-    });
-}
-
-Plotly.newPlot('myDiv', data);

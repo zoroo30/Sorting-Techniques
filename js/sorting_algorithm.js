@@ -19,6 +19,11 @@ class SortingAlgorithm {
 	}
 
 	//run 1 iteration only of the algorithm
+    setupStepMode(visualizer) {
+        this.counter = 0;
+        this.visualizer = visualizer;
+    }
+
 	next() {
 
 	}

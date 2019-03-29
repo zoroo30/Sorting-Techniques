@@ -29,7 +29,16 @@ class QuickSort extends SortingAlgorithm {
     }
 
     //run 1 iteration only of the algorithm
-    next() {
+    next(arr) {
+        
+    }
 
+    nextStep(arr, start, end) {
+        if (end <= start)
+            return;
+        let pivot = this.quickPass(arr, start, end);
+        this.visualizer.selectedItemIndex = i;
+        this.nextStep(arr, start, pivot - 1);
+        this.nextStep(arr, pivot + 1, end);
     }
 }

@@ -62,7 +62,11 @@ class MergeSort extends SortingAlgorithm {
     }
 
     //run 1 iteration only of the algorithm
-    next() {
+    next(arr) {
+    
+    }
+
+    nextStep(arr, j) {
 
     }
 }

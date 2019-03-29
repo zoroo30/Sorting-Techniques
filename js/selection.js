@@ -21,7 +21,15 @@ class SelectionSort extends SortingAlgorithm {
     }
 
     //run 1 iteration only of the algorithm
-    next() {
+    next(arr) {
+        if(this.counter < arr.length)
+            this.nextStep(arr, this.counter);
+        this.counter++;
+    }
 
+    nextStep(arr, j) {
+        let index = this.findMin(arr, j, arr.length);
+        this.visualizer.selectedItemIndex = index;
+        swap(arr, index, j);
     }
 }
