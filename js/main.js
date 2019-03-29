@@ -39,3 +39,8 @@ let myp5 = new p5(sketch,"canvas");
 window.onresize = function() {
   mainPlot.resize("plot");
 }
+
+$(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });

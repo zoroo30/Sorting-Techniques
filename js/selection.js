@@ -1,10 +1,10 @@
 class SelectionSort extends SortingAlgorithm {
     //sorting algorithm implementation
-    sort_alg(arr) {
+    sort_alg(arr, saveSwap) {
         let size = arr.length;
         for (let j = 0; j < size; j++) {
             let index = this.findMin(arr, j, size);
-            swap(arr, index, j);
+            this.swap(arr, index, j, saveSwap);
         }
     }
 
@@ -18,18 +18,5 @@ class SelectionSort extends SortingAlgorithm {
             }
         }
         return index;
-    }
-
-    //run 1 iteration only of the algorithm
-    next(arr) {
-        if(this.counter < arr.length)
-            this.nextStep(arr, this.counter);
-        this.counter++;
-    }
-
-    nextStep(arr, j) {
-        let index = this.findMin(arr, j, arr.length);
-        this.visualizer.selectedItemIndex = index;
-        swap(arr, index, j);
     }
 }

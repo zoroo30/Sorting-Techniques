@@ -1,8 +1,9 @@
 //swap 2 elements p1 and p2 in array arr
-function swap(arr, p1, p2) {
+function swap(arr, p1, p2, saveSwap) {
     temp = arr[p1];
     arr[p1] = arr[p2];
     arr[p2] = temp;
+    if(saveSwap) return new Swap(p1, p2);
 }
 
 //return a random array with numbers from 0 to size - 1
