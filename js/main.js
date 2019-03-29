@@ -8,7 +8,7 @@ let sortingAlgorithms = {
 };
 
 let mainPlot = new Plot(sortingAlgorithms);
-mainPlot.runSorting(10000, 2000);
+mainPlot.runSorting(20000, 2000);
 mainPlot.draw("plot");
 
 let visualizer = new Visualizer();
