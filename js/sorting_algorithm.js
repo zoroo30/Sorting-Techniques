@@ -51,6 +51,5 @@ class SortingAlgorithm {
 	getSortSwaps(arr) {
 		this.swaps = [];
 		this.sort_alg(arr, true);
-		return this.swaps;
 	}
 }

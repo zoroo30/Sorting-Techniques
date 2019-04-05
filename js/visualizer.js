@@ -4,7 +4,7 @@ class Visualizer {
 		this.arr = getRandomInputArray(this.arrSize);
 
 		//frameRate
-		this.fps = 30;
+		this.fps = 100;
 
 		//width and hight
 		this.w = 0.9*document.getElementById("container").clientWidth;
