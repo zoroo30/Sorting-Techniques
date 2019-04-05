@@ -5,7 +5,7 @@ class HeapSort extends SortingAlgorithm {
         this.heapSort(arr, saveSwap);
     }
 
-    heap_root(input, i, array_length, saveSwap) {
+    max_heapify(input, i, array_length, saveSwap) {
         var left = 2 * i + 1;
         var right = 2 * i + 2;
         var max = i;
@@ -20,24 +20,27 @@ class HeapSort extends SortingAlgorithm {
 
         if (max != i) {
             this.swap(input, i, max, saveSwap);
-            this.heap_root(input, max, array_length, saveSwap);
+            this.max_heapify(input, max, array_length, saveSwap);
         }
     }
 
-
-     heapSort(input, saveSwap) {
+    build_max_heap(input, saveSwap) {
         let array_length = input.length;
 
-        for (var i = Math.floor(array_length / 2); i >= 0; i -= 1)      {
-            this.heap_root(input, i, array_length, saveSwap);
+        for(var i = Math.floor(array_length / 2); i >= 0; i -= 1) {
+            this.max_heapify(input, i, array_length, saveSwap);
         }
+    }
 
-        for (i = input.length - 1; i > 0; i--) {
+    heapSort(input, saveSwap) {
+        let array_length = input.length;
+        
+        this.build_max_heap(input, saveSwap);
+
+        for (var i = input.length - 1; i > 0; i--) {
             this.swap(input, 0, i, saveSwap);
-            array_length--;
-          
-          
-            this.heap_root(input, 0, array_length, saveSwap);
+            array_length--;          
+            this.max_heapify(input, 0, array_length, saveSwap);
         }
     }
 }
