@@ -1,2 +1,2 @@
-# Sorting-Techniques
-Data Structures II Lab 1 Assignment
+# Sorting Techniques Visualization
+a simple visualization for different sorting algorithms
